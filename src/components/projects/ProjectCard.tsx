@@ -51,7 +51,7 @@ const ProjectCard = ({
             {buttonText && (
               <a
                 href={buttonLink || "#"}
-                className="inline-block px-8 py-3 text-white font-medium rounded-sm transition-all duration-300 hover:opacity-90"
+                className="inline-block px-8 py-3 w-full text-center md:max-w-39.75 text-white font-medium rounded-sm transition-all duration-300 hover:opacity-90"
                 style={{
                   background:
                     "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
@@ -62,7 +62,7 @@ const ProjectCard = ({
             )}
 
             {!buttonText && !buttonLink && (
-              <div className="inline-block px-6 py-2 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-sm">
+              <div className="inline-block px-6 py-2 w-full text-center md:max-w-39.75 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-sm">
                 Coming Soon
               </div>
             )}

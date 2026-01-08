@@ -40,7 +40,7 @@ const SelectedInvestments = () => {
 
             {/* CTA Button */}
             <button
-              className="px-8 py-3  font-sans text-base transition-opacity hover:opacity-80 relative bg-white"
+              className="px-8 py-3 w-full md:max-w-73.25  font-sans text-base transition-opacity hover:opacity-80 relative bg-white"
               style={{
                 border: "2px solid transparent",
                 backgroundImage:
