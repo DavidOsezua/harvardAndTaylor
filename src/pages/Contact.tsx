@@ -1,8 +1,11 @@
+import ContactAddress from "../components/contact/ContactAddress";
+import ContactForm from "../components/contact/ContactForm";
+
 const Contact = () => {
   return (
-    <div className="min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-4">Contact</h1>
-      <p>Contact page content goes here.</p>
+    <div className="min-h-screen">
+      <ContactForm />
+      <ContactAddress />
     </div>
   );
 };

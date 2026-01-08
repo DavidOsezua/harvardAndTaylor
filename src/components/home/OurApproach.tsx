@@ -12,10 +12,10 @@ const OurApproach = () => {
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-serif mb-6"
               style={{
-                background: 'linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                background: "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
               }}
             >
               Patient Capital, Disciplined Allocation
@@ -23,17 +23,22 @@ const OurApproach = () => {
 
             <div className="space-y-6 text-black font-sans text-base md:text-lg leading-relaxed">
               <p>
-                We deploy family capital with a long-term perspective, prioritising preservation and measured growth over speculative returns. Our investment philosophy centres on deep understanding, selective deployment, and active stewardship.
+                We deploy family capital with a long-term perspective,
+                prioritising preservation and measured growth over speculative
+                returns. Our investment philosophy centres on deep
+                understanding, selective deployment, and active stewardship.
               </p>
 
               <p>
-                As a single-family office, we maintain complete independence in our decision-making, unencumbered by external capital pressures or short-term performance mandates.
+                As a single-family office, we maintain complete independence in
+                our decision-making, unencumbered by external capital pressures
+                or short-term performance mandates.
               </p>
             </div>
           </div>
 
           {/* Right Images */}
-          <div className="order-1 lg:order-2 relative">
+          <div className="order-2 relative">
             <div className="relative">
               {/* Main large image */}
               <div className="rounded-3xl overflow-hidden shadow-lg">

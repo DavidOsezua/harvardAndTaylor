@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import MobileNav from "./MobileNav";
@@ -14,6 +14,10 @@ const Navbar = () => {
     { name: "Team", path: "/team" },
     { name: "Contact", path: "/contact" },
   ];
+
+  const location = useLocation();
+
+  console.log(location.pathname);
 
   return (
     <>
@@ -33,8 +37,11 @@ const Navbar = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    style={{ color: 'var(--color-primary-gold)' }}
-                    className="hover:opacity-80 transition-opacity duration-200 font-sans text-sm"
+                    className={`hover:text-primary-gold transition-opacity duration-200 font-sans text-sm text-grey-primary ${
+                      location.pathname === link.path
+                        ? "text-primary-gold font-semibold"
+                        : ""
+                    }`}
                   >
                     {link.name}
                   </Link>

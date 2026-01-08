@@ -8,14 +8,16 @@
   --color-primary-gold: #ccae74;
   --color-secondary-gold: #9b7936;
   --color-navbar-bg: #fef4e1;
-  --color-grey-primary: #7f7f7f;
-  --color-grey-light: #797979;
+  --color-grey-primary: #838995;
+  --color-grey-dark: #1c1c1c;
   --color-grey-lighter: #dfdfdf;
   --color-shadow-gold: rgba(209, 172, 61, 0.3);
+  --color-project-bg: #f9f9f9;
+  --color-gold-light: #faf8f3;
   --background-image-gold: linear-gradient(
     180deg,
-    rgba(204, 174, 116, 0.5) 11.02%,
-    rgba(155, 121, 54, 0.5) 93.11%
+    rgba(204, 174, 116, 0.2) 11.02%,
+    rgba(155, 121, 54, 0.2) 93.11%
   );
   --background-image-overlay: linear-gradient(
     180deg,
@@ -23,7 +25,9 @@
     rgba(223, 223, 223, 0.1) 100%
   );
   --background-image-overlayDark: linear-gradient(
-   180deg, rgba(15, 17, 21, 1) 0%, rgba(15, 17, 21, 0.9) 90%
+    180deg,
+    rgba(15, 17, 21, 1) 0%,
+    rgba(15, 17, 21, 0.9) 90%
   );
 }
 

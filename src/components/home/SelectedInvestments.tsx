@@ -5,7 +5,7 @@ const SelectedInvestments = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Image */}
           <div className="order-1">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            <div className=" overflow-hidden shadow-lg">
               <img
                 src="/selectedinvestment.webp"
                 alt="Building development illustration"

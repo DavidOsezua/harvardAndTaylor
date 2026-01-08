@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Left Column - Logo and Address */}
           <div>
             <div className="mb-6">
-              <LogoWhite maxWidth="180px" />
+              <LogoWhite maxWidth="138px" />
             </div>
             <address className="not-italic font-sans text-sm text-gray-400 leading-relaxed">
               153a Rye Lane, London,<br />
