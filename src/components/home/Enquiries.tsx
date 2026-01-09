@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Enquiries = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-white">
@@ -29,16 +31,18 @@ const Enquiries = () => {
 
         {/* CTA Button */}
         <div className="w-full">
-          <button
-            className="px-10 py-4 w-full md:max-w-51 font-sans text-base transition-opacity hover:opacity-90"
-            style={{
-              backgroundColor: "#EEECE8",
-              color: "#000",
-              border: "none",
-            }}
-          >
-            GET IN TOUCH
-          </button>
+          <NavLink to={"/contact"}>
+            <button
+              className="px-10 py-4 cursor-pointer w-full md:max-w-51 font-sans text-base transition-opacity hover:opacity-90"
+              style={{
+                backgroundColor: "#EEECE8",
+                color: "#000",
+                border: "none",
+              }}
+            >
+              GET IN TOUCH
+            </button>
+          </NavLink>
         </div>
       </div>
     </section>

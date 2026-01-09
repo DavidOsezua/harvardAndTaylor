@@ -27,7 +27,7 @@ const ContactForm = () => {
   return (
     <section className="bg-white py-16 md:py-24 px-6">
       <div className="max-w-6xl mx-auto space-y-12">
-        <div>
+        {/* <div>
           <p className="text-xs tracking-widest uppercase text-gray-500 mb-4 font-medium">
             ENQUIRIES
           </p>
@@ -46,7 +46,7 @@ const ContactForm = () => {
             We review a limited number of discreet, well-considered investment
             opportunities each year.
           </p>
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-12 lg:gap-16">
           {/* Left Sidebar - Information */}
           <div className="space-y-12">
@@ -178,10 +178,10 @@ const ContactForm = () => {
               </div>
 
               {/* Submit Button */}
-              <div className="pt-4">
+              <div className="pt-4 w-full">
                 <button
                   type="submit"
-                  className="px-10 py-3 text-white font-medium tracking-wide uppercase text-sm rounded-sm transition-all duration-300 hover:opacity-90"
+                  className="px-10 py-3 md:max-w-56.75 w-full cursor-pointer text-white font-medium tracking-wide uppercase text-sm rounded-sm transition-all duration-300 hover:opacity-90"
                   style={{
                     background:
                       "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",

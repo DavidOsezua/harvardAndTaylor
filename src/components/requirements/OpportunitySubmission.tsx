@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const OpportunitySubmission = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-white">
@@ -22,27 +24,29 @@ const OpportunitySubmission = () => {
         </p>
 
         {/* CTA Button */}
-        <button
-          className="px-8 py-2  font-sans text-base transition-opacity hover:opacity-80 relative bg-white"
-          style={{
-            border: "2px solid transparent",
-            backgroundImage:
-              "linear-gradient(white, white), linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
-            backgroundOrigin: "border-box",
-            backgroundClip: "padding-box, border-box",
-          }}
-        >
-          <span
+        <NavLink to={"/contact"}>
+          <button
+            className="px-8 w-full py-2 md:max-w-41  font-sans text-base transition-opacity hover:opacity-80 relative bg-white"
             style={{
-              background: "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              border: "2px solid transparent",
+              backgroundImage:
+                "linear-gradient(white, white), linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
             }}
           >
-            Contact us
-          </span>
-        </button>
+            <span
+              style={{
+                background: "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Contact us
+            </span>
+          </button>
+        </NavLink>
       </div>
     </section>
   );

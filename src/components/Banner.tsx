@@ -39,7 +39,7 @@ const Banner = ({ label, title, subtitle }: BannerProps) => {
             {title}
           </h1>
           {subtitle && (
-            <p className="text-white font-sans text-base md:text-lg max-w-2xl leading-relaxed">
+            <p className="text-white font-sans   max-w-136 leading-relaxed">
               {subtitle}
             </p>
           )}

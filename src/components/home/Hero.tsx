@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import LogoWhite from "../svgComponent/LogoWhite";
 
 const Hero = () => {
@@ -14,10 +15,10 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-[1000px] space-y-4 md:space-y-6 mx-auto z-10 flex flex-col justify-center  h-full px-6 ">
+      <div className="relative max-w-250 space-y-4 md:space-y-6 mx-auto z-10 flex flex-col justify-center  h-full px-6 ">
         {/* Logo */}
 
-        <LogoWhite className="max-w-[106px] md:max-w-[240px]" />
+        <LogoWhite className="max-w-26.5 md:max-w-60" />
 
         {/* Title */}
         <h1
@@ -40,16 +41,18 @@ const Hero = () => {
 
         {/* CTA Button */}
         <div>
-          <button
-            className="px-8 py-3 rounded-lg text-white font-sans text-base hover:opacity-90 transition-opacity"
-            style={{
-              background:
-                "linear-gradient(180deg, var(--color-primary-gold) 0%, var(--color-secondary-gold) 100%)",
-              boxShadow: "0px 8px 8px -8px var(--color-shadow-gold)",
-            }}
-          >
-            Submit a Discreet Opportunity
-          </button>
+          <NavLink to={"/contact"}>
+            <button
+              className="px-8 py-3 rounded-lg cursor-pointer text-white font-sans text-base hover:opacity-90 transition-opacity"
+              style={{
+                background:
+                  "linear-gradient(180deg, var(--color-primary-gold) 0%, var(--color-secondary-gold) 100%)",
+                boxShadow: "0px 8px 8px -8px var(--color-shadow-gold)",
+              }}
+            >
+              Submit a Discreet Opportunity
+            </button>
+          </NavLink>
         </div>
       </div>
     </section>

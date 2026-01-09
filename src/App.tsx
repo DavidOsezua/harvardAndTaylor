@@ -7,12 +7,15 @@ import Requirements from "./pages/Requirements";
 import Contact from "./pages/Contact";
 import HomePage from "./pages/HomePage";
 import Team from "./pages/Team";
+import PolicyPage from "./pages/PolicyPage";
 
 const App = () => {
   return (
+    
     <div className="min-h-screen flex flex-col">
+
       <Navbar />
-      <main className="pt-20 grow">
+      <main className="grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
@@ -20,6 +23,7 @@ const App = () => {
           <Route path="/requirements" element={<Requirements />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/privacy" element={<PolicyPage />} />
         </Routes>
       </main>
       <Footer />

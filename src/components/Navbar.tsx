@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import MobileNav from "./MobileNav";
-import LogoGrey from "./svgComponent/LogoGrey";
+import LogoWhite from "./svgComponent/LogoWhite";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { name: "About", path: "/about" },
@@ -17,18 +18,32 @@ const Navbar = () => {
 
   const location = useLocation();
 
-  console.log(location.pathname);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 backdrop-blur-[71.8px]">
-        <div className="bg-navbar-bg bg-opacity-12">
+      <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 backdrop-blur-[71.8px] transition-all duration-300">
+        <div
+          className="transition-all duration-300"
+          style={{
+            background: isScrolled
+              ? "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)"
+              : "rgba(254, 244, 225, 0.12)",
+          }}
+        >
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <Link to="/">
-                <LogoGrey />
+                <LogoWhite maxWidth="84px" />
               </Link>
 
               {/* Navigation Links */}
@@ -37,11 +52,12 @@ const Navbar = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`hover:text-primary-gold transition-opacity duration-200 font-sans text-sm text-grey-primary ${
-                      location.pathname === link.path
-                        ? "text-primary-gold font-semibold"
-                        : ""
-                    }`}
+                    className={`hover:text-primary-gold transition-all duration-200 font-sans text-sm 
+                       ${
+                         location.pathname === link.path
+                           ? "text-primary-gold font-semibold"
+                           : "text-white"
+                       }`}
                   >
                     {link.name}
                   </Link>
@@ -53,19 +69,26 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Navbar */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-[71.8px]">
-        <div className="bg-[#FEF4E1] bg-opacity-12">
+      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-[71.8px] transition-all duration-300">
+        <div
+          className="transition-all duration-300"
+          style={{
+            background: isScrolled
+              ? "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)"
+              : "rgba(254, 244, 225, 0.12)",
+          }}
+        >
           <div className="px-6 py-4">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <Link to="/">
-                <LogoGrey />
+                <LogoWhite maxWidth="84px" />
               </Link>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-black p-2"
+                className="text-white p-2"
                 aria-label="Toggle menu"
               >
                 <Menu size={24} />

@@ -41,7 +41,7 @@ const OurApproach = () => {
           <div className="order-2 relative">
             <div className="relative">
               {/* Main large image */}
-              <div className="rounded-3xl overflow-hidden shadow-lg">
+              <div className="rounded-3xl overflow-hidden">
                 <img
                   src="/ourapproach.webp"
                   alt="Modern building architecture"
@@ -50,13 +50,13 @@ const OurApproach = () => {
               </div>
 
               {/* Smaller overlay image */}
-              <div className="absolute bottom-0 right-0 w-3/5 rounded-3xl overflow-hidden shadow-2xl transform translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8">
+              {/* <div className="absolute bottom-0 right-0 w-3/5 rounded-3xl overflow-hidden  transform translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8">
                 <img
                   src="/ourapproach.webp"
                   alt="Building detail"
                   className="w-full h-auto object-cover"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

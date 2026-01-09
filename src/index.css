@@ -29,6 +29,13 @@
     rgba(15, 17, 21, 1) 0%,
     rgba(15, 17, 21, 0.9) 90%
   );
+
+  --background-image-gradient-dark: linear-gradient(
+    to bottom,
+    rgb(15 17 21 / 1),
+    rgb(15 17 21 / 0.9),
+    rgb(15 17 21 / 1)
+  );
 }
 
 body {
