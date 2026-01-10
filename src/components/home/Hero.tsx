@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import LogoWhite from "../svgComponent/LogoWhite";
+import { staggerContainer, slideFromBottom } from "../../utils/animations";
 
 const Hero = () => {
   return (
@@ -15,32 +17,43 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-250 space-y-4 md:space-y-6 mx-auto z-10 flex flex-col justify-center  h-full px-6 ">
+      <motion.div
+        className="relative max-w-250 space-y-4 md:space-y-6 mx-auto z-10 flex flex-col pt-8 justify-center h-full px-6"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {/* Logo */}
-
-        <LogoWhite className="max-w-26.5 md:max-w-60" />
+        <motion.div variants={slideFromBottom}>
+          <LogoWhite className="max-w-26.5 md:max-w-60" />
+        </motion.div>
 
         {/* Title */}
-        <h1
-          className="font-serif text-2xl md:text-3xl  max-w-2xl"
+        <motion.h1
+          className="font-serif text-2xl md:text-3xl max-w-2xl"
           style={{
             background: "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
           }}
+          variants={slideFromBottom}
         >
           A Principal-Led UK Single-Family Office
-        </h1>
+        </motion.h1>
 
         {/* Description */}
-        <p className="text-white font-sans text-base md:text-lg  max-w-2xl leading-relaxed">
+        <motion.p
+          className="text-white font-sans text-base md:text-lg max-w-2xl leading-relaxed"
+          variants={slideFromBottom}
+        >
           Focused on the long-term stewardship, protection, and growth of family
           capital through selective investment in UK real assets.
-        </p>
+        </motion.p>
 
         {/* CTA Button */}
-        <div>
+        <motion.div variants={slideFromBottom}>
           <NavLink to={"/contact"}>
             <button
               className="px-8 py-3 rounded-lg cursor-pointer text-white font-sans text-base hover:opacity-90 transition-opacity"
@@ -53,8 +66,8 @@ const Hero = () => {
               Submit a Discreet Opportunity
             </button>
           </NavLink>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

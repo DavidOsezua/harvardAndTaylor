@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { slideFromLeft, slideFromRight } from "../../utils/animations";
 
 const SelectedInvestments = () => {
   return (
@@ -6,7 +8,13 @@ const SelectedInvestments = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Image */}
-          <div className="order-1">
+          <motion.div
+            className="order-1"
+            variants={slideFromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className=" overflow-hidden shadow-lg">
               <img
                 src="/selectedinvestment.webp"
@@ -14,10 +22,16 @@ const SelectedInvestments = () => {
                 className="w-full h-auto object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Content */}
-          <div className="order-2">
+          <motion.div
+            className="order-2"
+            variants={slideFromRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <p className="text-sm md:text-base font-sans text-gray-600 mb-4 tracking-wider uppercase">
               Selected Investments
             </p>
@@ -65,7 +79,7 @@ const SelectedInvestments = () => {
                 </span>
               </button>
             </NavLink>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

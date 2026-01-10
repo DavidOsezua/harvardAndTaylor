@@ -1,10 +1,19 @@
+import { motion } from "framer-motion";
+import { slideFromLeft, slideFromRight, staggerContainer, slideFromBottom } from "../../utils/animations";
+
 const TeamHarvardAndTaylor = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="lg:flex lg:justify-between gap-12 items-start">
           {/* Left Column - Image and Title */}
-          <div className="text-center md:text-left ">
+          <motion.div
+            className="text-center md:text-left"
+            variants={slideFromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className="mb-6 w-">
               <img
                 src="/teamimg1.webp"
@@ -29,10 +38,16 @@ const TeamHarvardAndTaylor = () => {
                 Managing Director
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Content */}
-          <div className="space-y-6 flex-1">
+          <motion.div
+            className="space-y-6 flex-1"
+            variants={slideFromRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <p className="text-grey-dark font-sans text-base md:text-lg leading-relaxed">
               Harvard & Taylor operates as a principal-led investment office,
               with all capital allocation decisions made directly by the family.
@@ -59,33 +74,39 @@ const TeamHarvardAndTaylor = () => {
             <div className="border-t border-gray-300 my-8"></div>
 
             {/* Bottom Section - Three Columns */}
-            <div className="grid grid-cols-3 gap-8">
-              <div>
+            <motion.div
+              className="grid grid-cols-3 gap-8"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.div variants={slideFromBottom}>
                 <p className="text-xs font-sans text-grey-primary uppercase tracking-wider mb-2">
                   Focus
                 </p>
                 <p className="text-base font-sans text-grey-dark">
                   UK Real Assets
                 </p>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={slideFromBottom}>
                 <p className="text-xs font-sans text-grey-primary uppercase tracking-wider mb-2">
                   Approach
                 </p>
                 <p className="text-base font-sans text-grey-dark">
                   Direct Investment
                 </p>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={slideFromBottom}>
                 <p className="text-xs font-sans text-grey-primary uppercase tracking-wider mb-2">
                   Horizon
                 </p>
                 <p className="text-base font-sans text-grey-dark">
                   Generational
                 </p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

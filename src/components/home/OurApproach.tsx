@@ -1,10 +1,19 @@
+import { motion } from "framer-motion";
+import { slideFromLeft, slideFromRight } from "../../utils/animations";
+
 const OurApproach = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="order-2 lg:order-1">
+          <motion.div
+            className="order-2 lg:order-1"
+            variants={slideFromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <p className="text-sm md:text-base font-sans text-gray-600 mb-4 tracking-wider uppercase">
               Our Approach
             </p>
@@ -35,10 +44,16 @@ const OurApproach = () => {
                 or short-term performance mandates.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Images */}
-          <div className="order-2 relative">
+          <motion.div
+            className="order-2 relative"
+            variants={slideFromRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className="relative">
               {/* Main large image */}
               <div className="rounded-3xl overflow-hidden">
@@ -58,7 +73,7 @@ const OurApproach = () => {
                 />
               </div> */}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

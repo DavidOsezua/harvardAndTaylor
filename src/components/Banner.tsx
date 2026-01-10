@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { staggerContainer, slideFromBottom } from "../utils/animations";
+
 interface BannerProps {
   label: string;
   title: string;
@@ -20,14 +23,21 @@ const Banner = ({ label, title, subtitle }: BannerProps) => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10  px-6">
-          <p
+        <motion.div
+          className="relative z-10  px-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.p
             className="text-xs md:text-sm font-sans mb-4 tracking-widest uppercase"
             style={{ color: "#838995" }}
+            variants={slideFromBottom}
           >
             {label}
-          </p>
-          <h1
+          </motion.p>
+          <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-serif mb-4"
             style={{
               background: "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
@@ -35,15 +45,19 @@ const Banner = ({ label, title, subtitle }: BannerProps) => {
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
             }}
+            variants={slideFromBottom}
           >
             {title}
-          </h1>
+          </motion.h1>
           {subtitle && (
-            <p className="text-white font-sans   max-w-136 leading-relaxed">
+            <motion.p
+              className="text-white font-sans   max-w-136 leading-relaxed"
+              variants={slideFromBottom}
+            >
               {subtitle}
-            </p>
+            </motion.p>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

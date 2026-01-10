@@ -1,9 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { slideFromBottom } from "../../utils/animations";
 
 const Enquiries = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-white">
-      <div className="max-w-4xl mx-auto text-center">
+      <motion.div
+        className="max-w-4xl mx-auto text-center"
+        variants={slideFromBottom}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {/* Header */}
         <p className="text-xs md:text-sm font-sans text-gray-600 mb-4 tracking-widest uppercase">
           Enquiries
@@ -44,7 +52,7 @@ const Enquiries = () => {
             </button>
           </NavLink>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

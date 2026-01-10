@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { slideFromBottom, staggerContainer } from "../../utils/animations";
+
 const InvestmentFocus = () => {
   const investmentAreas = [
     {
@@ -21,7 +24,13 @@ const InvestmentFocus = () => {
     <section className="py-10 md:py-16 px-6 bg-gold-light">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          variants={slideFromBottom}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <p className="text-[11px] tracking-[0.3em] text-grey-primary uppercase mb-4">
             Investment Focus
           </p>
@@ -37,18 +46,25 @@ const InvestmentFocus = () => {
           >
             UK Real Assets
           </h2>
-        </div>
+        </motion.div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {investmentAreas.map((area, index) => (
-            <div
+            <motion.div
               key={index}
               className={`px-6 md:px-10  ${
                 index !== investmentAreas.length - 1
                   ? "md:border-r md:border-r-primary-gold"
                   : ""
               }`}
+              variants={slideFromBottom}
             >
               <h3 className="text-lg md:text-xl font-serif mb-4 text-grey-dark">
                 {area.title}
@@ -57,9 +73,9 @@ const InvestmentFocus = () => {
               <p className="text-sm leading-relaxed max-w-xs mx-auto text-grey-dark">
                 {area.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
