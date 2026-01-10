@@ -82,7 +82,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
               {/* Logo */}
               <Link to="/">
-                <LogoWhite maxWidth="84px" />
+                <LogoWhite maxWidth="55.58px" />
               </Link>
 
               {/* Mobile Menu Button */}
