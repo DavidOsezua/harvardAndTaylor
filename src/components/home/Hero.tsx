@@ -4,7 +4,7 @@ import { staggerContainer, slideFromBottom } from "../../utils/animations";
 
 const Hero = () => {
   return (
-    <section className="relative h-[523px] md:h-[623px] w-full">
+    <section className="relative h-130.75 md:h-155.75 w-full">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -30,7 +30,7 @@ const Hero = () => {
 
         {/* Title */}
         <motion.h1
-          className="font-serif text-2xl md:text-3xl max-w-2xl"
+          className="font-serif font-semibold text-4xl md:text-5xl lg:text-6xl max-w-3xl leading-tight"
           style={{
             background: "linear-gradient(180deg, #CCAE74 0%, #9B7936 100%)",
             WebkitBackgroundClip: "text",
@@ -52,7 +52,7 @@ const Hero = () => {
         </motion.p>
 
         {/* CTA Button */}
-        <motion.div variants={slideFromBottom}>
+        <motion.div className="pt-6" variants={slideFromBottom}>
           <NavLink to={"/contact"}>
             <button
               className="px-8 py-3 rounded-lg cursor-pointer text-white font-sans text-base hover:opacity-90 transition-opacity"
