@@ -25,9 +25,9 @@ const Hero = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         {/* Logo */}
-        <motion.div variants={slideFromBottom}>
+        {/* <motion.div variants={slideFromBottom}>
           <LogoWhite className="max-w-26.5 md:max-w-60" />
-        </motion.div>
+        </motion.div> */}
 
         {/* Title */}
         <motion.h1

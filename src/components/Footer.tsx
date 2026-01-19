@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { Instagram } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import LogoWhite from "./svgComponent/LogoWhite";
 
 const Footer = () => {
@@ -116,6 +116,15 @@ const Footer = () => {
                   aria-label="Instagram"
                 >
                   <Instagram size={24} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/usmaan-bashrit-6aa740348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-gray-400 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={24} />
                 </a>
               </div>
             </div>
