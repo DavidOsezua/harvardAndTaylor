@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import LogoWhite from "../svgComponent/LogoWhite";
 import { staggerContainer, slideFromBottom } from "../../utils/animations";
 
 const Hero = () => {
